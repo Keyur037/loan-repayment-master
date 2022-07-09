@@ -19,5 +19,5 @@ elif os.path.isfile(filepath):
         with open("output.pdf", "wb") as f:
             f.write(img2pdf.convert(filepath))
 else:
-    print("please input file or dir")
+    print("please input image or image directory")
 
