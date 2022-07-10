@@ -1,5 +1,5 @@
 import sys
-import img2pdf
+from img2pdf import convert_from_path as path
 import os
 
 filepath = sys.argv[0]
@@ -13,11 +13,11 @@ if os.path.isdir(filepath):
             if os.path.isdir(path):
                 continue
             imgs.append(path)
-        f.write(img2pdf.convert(imgs))
+        f.write(path.convert(imgs))
 elif os.path.isfile(filepath):
     if filepath.endswith(".jpg"):
         with open("output.pdf", "wb") as f:
-            f.write(img2pdf.convert(filepath))
+            f.write(path.convert(filepath))
 else:
     print("please input image or image directory")
 
